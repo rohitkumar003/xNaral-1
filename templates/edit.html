@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>C.R.U.D</title>
+    <style>
+        .container {
+            margin-left: 550px;
+            margin-top: 150px;
+            width: 300px;
+            height: 100px;
+            padding: 15px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Edit</h1>
+    <p style="margin-left:550px;"><a href="/currency/retrieve">Check data</a></p>
+    <div class="container">
+        <table>
+            <tbody>
+                <form action="/update/{{record.id}}" method="POST">
+                    {% csrf_token %}
+                    <tr>
+                        <td> Currency Code </td>
+                        <td><input type="text" name="currency_code" value={{record.currency_code}}></td>
+                    </tr>
+                    <tr>
+                        <td> Language </td>
+                        <td><input type="text" name="language" value={{record.language}}></td>
+                    </tr>
+                    <tr>
+                        <td> Target Currency Code </td>
+                        <td><input type="text" name="target_currency_code" value={{record.target_currency_code}}></td>
+                    </tr>
+                    <tr>
+                        <td><button>Submit</button></td>
+                    </tr>
+                </form>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
